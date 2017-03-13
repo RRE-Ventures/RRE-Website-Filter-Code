@@ -1,0 +1,872 @@
+var portfolio = {
+  "tags": {
+    "investor: Jim Robinson": [
+      "/page-21",
+      "/abra-1",
+      "/bitpay",
+      "/boom",
+      "/chain",
+      "/itbit",
+      "/mirror",
+      "/noom",
+      "/olo",
+      "/ripple",
+      "/openpeak"
+    ],
+    "industry: cryptocurrency": [
+      "/page-21",
+      "/abra-1",
+      "/bitpay",
+      "/chain",
+      "/itbit",
+      "/mirror",
+      "/ripple"
+    ],
+    "location: New York": [
+      "/page-21",
+      "/bark-co",
+      "/betaworks",
+      "/breather",
+      "/business-insider",
+      "/buzzfeed-1",
+      "/datadog",
+      "/yipit",
+      "/floored",
+      "/hightower-1",
+      "/itbit",
+      "/k2-intelligence",
+      "/kroll-bond-ratings",
+      "/managed-by-q",
+      "/noom",
+      "/olo",
+      "/ondeck-1",
+      "/one-drop",
+      "/paperless-post",
+      "/payfone",
+      "/recyclebank",
+      "/the-skimm",
+      "/socialflow",
+      "/tinybop",
+      "/yieldbot",
+      "/sailthru"
+    ],
+    "industry: hardware": [
+      "/page-21",
+      "/clearpath",
+      "/drobo",
+      "/jibo",
+      "/spire"
+    ],
+    "location: San Francisco": [
+      "/abra-1"
+    ],
+    "investor: Alice Lloyd George": [
+      "/abra-1"
+    ],
+    "industry: fintech": [
+      "/abra-1",
+      "/avant",
+      "/boom",
+      "/coverhound",
+      "/itbit",
+      "/kroll-bond-ratings",
+      "/mirror",
+      "/ondeck-1",
+      "/payfone",
+      "/ripple",
+      "/driverup"
+    ],
+    "location: other": [
+      "/avant",
+      "/bitpay",
+      "/clearpath",
+      "/hyla",
+      "/jibo",
+      "/kik",
+      "/roundbox",
+      "/driverup",
+      "/spaceflight",
+      "/openpeak"
+    ],
+    "investor: James D. Robinson III": [
+      "/avant",
+      "/coverhound",
+      "/k2-intelligence",
+      "/ondeck-1"
+    ],
+    "industry: consumer": [
+      "/bark-co",
+      "/betaworks",
+      "/breather",
+      "/yipit",
+      "/jibo",
+      "/kik",
+      "/noom",
+      "/one-drop",
+      "/paperless-post",
+      "/tinybop",
+      "/trumaker"
+    ],
+    "investor: Stuart Ellman": [
+      "/bark-co",
+      "/betaworks",
+      "/business-insider",
+      "/clearpath",
+      "/floored",
+      "/jibo",
+      "/kik",
+      "/kroll-bond-ratings",
+      "/one-drop",
+      "/payfone",
+      "/recyclebank",
+      "/driverup"
+    ],
+    "location: bay area": [
+      "/base",
+      "/bitly",
+      "/boom",
+      "/chain",
+      "/collective-health",
+      "/coverhound",
+      "/drobo",
+      "/imgix",
+      "/mirror",
+      "/palantir",
+      "/ripple",
+      "/electric-cloud",
+      "/shuddle",
+      "/spire",
+      "/trumaker",
+      "/viglink"
+    ],
+    "investor: Raju Rishi": [
+      "/base",
+      "/bitly",
+      "/collective-health",
+      "/datadog",
+      "/yipit",
+      "/imgix",
+      "/viglink",
+      "/yieldbot",
+      "/sailthru"
+    ],
+    "industry: enterprise software": [
+      "/base",
+      "/hightower-1",
+      "/olo",
+      "/palantir",
+      "/electric-cloud",
+      "/socialflow",
+      "/openpeak"
+    ],
+    "industry: media": [
+      "/betaworks",
+      "/business-insider",
+      "/buzzfeed-1",
+      "/the-skimm"
+    ],
+    "industry: marketing": [
+      "/bitly",
+      "/socialflow",
+      "/sailthru"
+    ],
+    "industry: mobile": [
+      "/boom",
+      "/breather",
+      "/kik",
+      "/noom",
+      "/olo",
+      "/one-drop",
+      "/payfone",
+      "/roundbox",
+      "/shuddle",
+      "/tinybop",
+      "/openpeak"
+    ],
+    "investor: Steve Schlafman": [
+      "/breather",
+      "/hightower-1",
+      "/managed-by-q",
+      "/shuddle",
+      "/the-skimm",
+      "/tinybop",
+      "/trumaker"
+    ],
+    "industry: on-demand service": [
+      "/breather",
+      "/managed-by-q",
+      "/shuddle"
+    ],
+    "investor: Will Porteous": [
+      "/buzzfeed-1",
+      "/drobo",
+      "/paperless-post",
+      "/spaceflight",
+      "/spire"
+    ],
+    "industry: robotics": [
+      "/clearpath",
+      "/jibo"
+    ],
+    "industry: healthcare": [
+      "/collective-health",
+      "/one-drop"
+    ],
+    "industry: dev tools": [
+      "/datadog",
+      "/imgix",
+      "/electric-cloud"
+    ],
+    "industry: real estate": [
+      "/floored",
+      "/hightower-1",
+      "/managed-by-q"
+    ],
+    "industry: logistics": [
+      "/hyla",
+      "/managed-by-q",
+      "/olo",
+      "/recyclebank"
+    ],
+    "industry: machine learning": [
+      "/palantir"
+    ],
+    "industry: security": [
+      "/payfone"
+    ],
+    "industry: space": [
+      "/spaceflight",
+      "/spire"
+    ],
+    "industry: e-commerce": [
+      "/trumaker",
+      "/viglink"
+    ],
+    "industry: ad tech": [
+      "/viglink",
+      "/yieldbot"
+    ]
+  },
+  "categories": {
+    "Financial Services": [
+      "/page-21",
+      "/abra-1",
+      "/avant",
+      "/bitpay",
+      "/boom",
+      "/chain",
+      "/coverhound",
+      "/yipit",
+      "/itbit",
+      "/k2-intelligence",
+      "/kroll-bond-ratings",
+      "/mirror",
+      "/ondeck-1",
+      "/ripple",
+      "/driverup"
+    ],
+    "E-Commerce": [
+      "/bark-co",
+      "/trumaker"
+    ],
+    "Enterprise": [
+      "/base",
+      "/managed-by-q",
+      "/recyclebank"
+    ],
+    "Media": [
+      "/betaworks",
+      "/business-insider",
+      "/buzzfeed-1",
+      "/noom",
+      "/paperless-post",
+      "/the-skimm",
+      "/socialflow",
+      "/tinybop"
+    ],
+    "SaaS": [
+      "/bitly",
+      "/palantir",
+      "/payfone",
+      "/roundbox",
+      "/openpeak",
+      "/sailthru"
+    ],
+    "On-Demand Service": [
+      "/breather",
+      "/shuddle"
+    ],
+    "Hardware/Products": [
+      "/clearpath",
+      "/drobo",
+      "/jibo",
+      "/spaceflight",
+      "/spire"
+    ],
+    "Healthcare": [
+      "/collective-health",
+      "/one-drop"
+    ],
+    "Developer Tools": [
+      "/datadog",
+      "/electric-cloud"
+    ],
+    "Real Estate": [
+      "/floored",
+      "/hightower-1"
+    ],
+    "Marketplaces": [
+      "/hyla",
+      "/olo"
+    ],
+    "Infrastructure": [
+      "/imgix"
+    ],
+    "Social Messaging": [
+      "/kik"
+    ],
+    "Advertising Technologies": [
+      "/viglink",
+      "/yieldbot"
+    ]
+  },
+  "locations": {
+    "New York": [
+      "/page-21",
+      "/bark-co",
+      "/betaworks",
+      "/breather",
+      "/business-insider",
+      "/buzzfeed-1",
+      "/datadog",
+      "/yipit",
+      "/floored",
+      "/hightower-1",
+      "/itbit",
+      "/k2-intelligence",
+      "/kroll-bond-ratings",
+      "/managed-by-q",
+      "/noom",
+      "/olo",
+      "/ondeck-1",
+      "/one-drop",
+      "/paperless-post",
+      "/payfone",
+      "/recyclebank",
+      "/the-skimm",
+      "/socialflow",
+      "/tinybop",
+      "/yieldbot",
+      "/sailthru"
+    ],
+    "San Francisco": [
+      "/abra-1"
+    ],
+    "other": [
+      "/avant",
+      "/bitpay",
+      "/clearpath",
+      "/hyla",
+      "/jibo",
+      "/kik",
+      "/roundbox",
+      "/driverup",
+      "/spaceflight",
+      "/openpeak"
+    ],
+    "bay area": [
+      "/base",
+      "/bitly",
+      "/boom",
+      "/chain",
+      "/collective-health",
+      "/coverhound",
+      "/drobo",
+      "/imgix",
+      "/mirror",
+      "/palantir",
+      "/ripple",
+      "/electric-cloud",
+      "/shuddle",
+      "/spire",
+      "/trumaker",
+      "/viglink"
+    ]
+  },
+  "industries": {
+    "cryptocurrency": [
+      "/page-21",
+      "/abra-1",
+      "/bitpay",
+      "/chain",
+      "/itbit",
+      "/mirror",
+      "/ripple"
+    ],
+    "hardware": [
+      "/page-21",
+      "/clearpath",
+      "/drobo",
+      "/jibo",
+      "/spire"
+    ],
+    "fintech": [
+      "/abra-1",
+      "/avant",
+      "/boom",
+      "/coverhound",
+      "/itbit",
+      "/kroll-bond-ratings",
+      "/mirror",
+      "/ondeck-1",
+      "/payfone",
+      "/ripple",
+      "/driverup"
+    ],
+    "consumer": [
+      "/bark-co",
+      "/betaworks",
+      "/breather",
+      "/yipit",
+      "/jibo",
+      "/kik",
+      "/noom",
+      "/one-drop",
+      "/paperless-post",
+      "/tinybop",
+      "/trumaker"
+    ],
+    "enterprise software": [
+      "/base",
+      "/hightower-1",
+      "/olo",
+      "/palantir",
+      "/electric-cloud",
+      "/socialflow",
+      "/openpeak"
+    ],
+    "media": [
+      "/betaworks",
+      "/business-insider",
+      "/buzzfeed-1",
+      "/the-skimm"
+    ],
+    "marketing": [
+      "/bitly",
+      "/socialflow",
+      "/sailthru"
+    ],
+    "mobile": [
+      "/boom",
+      "/breather",
+      "/kik",
+      "/noom",
+      "/olo",
+      "/one-drop",
+      "/payfone",
+      "/roundbox",
+      "/shuddle",
+      "/tinybop",
+      "/openpeak"
+    ],
+    "on-demand service": [
+      "/breather",
+      "/managed-by-q",
+      "/shuddle"
+    ],
+    "robotics": [
+      "/clearpath",
+      "/jibo"
+    ],
+    "healthcare": [
+      "/collective-health",
+      "/one-drop"
+    ],
+    "dev tools": [
+      "/datadog",
+      "/imgix",
+      "/electric-cloud"
+    ],
+    "real estate": [
+      "/floored",
+      "/hightower-1",
+      "/managed-by-q"
+    ],
+    "logistics": [
+      "/hyla",
+      "/managed-by-q",
+      "/olo",
+      "/recyclebank"
+    ],
+    "machine learning": [
+      "/palantir"
+    ],
+    "security": [
+      "/payfone"
+    ],
+    "space": [
+      "/spaceflight",
+      "/spire"
+    ],
+    "e-commerce": [
+      "/trumaker",
+      "/viglink"
+    ],
+    "ad tech": [
+      "/viglink",
+      "/yieldbot"
+    ]
+  },
+  "investors": {
+    "Jim Robinson": [
+      "/page-21",
+      "/abra-1",
+      "/bitpay",
+      "/boom",
+      "/chain",
+      "/itbit",
+      "/mirror",
+      "/noom",
+      "/olo",
+      "/ripple",
+      "/openpeak"
+    ],
+    "Alice Lloyd George": [
+      "/abra-1"
+    ],
+    "James D. Robinson III": [
+      "/avant",
+      "/coverhound",
+      "/k2-intelligence",
+      "/ondeck-1"
+    ],
+    "Stuart Ellman": [
+      "/bark-co",
+      "/betaworks",
+      "/business-insider",
+      "/clearpath",
+      "/floored",
+      "/jibo",
+      "/kik",
+      "/kroll-bond-ratings",
+      "/one-drop",
+      "/payfone",
+      "/recyclebank",
+      "/driverup"
+    ],
+    "Raju Rishi": [
+      "/base",
+      "/bitly",
+      "/collective-health",
+      "/datadog",
+      "/yipit",
+      "/imgix",
+      "/viglink",
+      "/yieldbot",
+      "/sailthru"
+    ],
+    "Steve Schlafman": [
+      "/breather",
+      "/hightower-1",
+      "/managed-by-q",
+      "/shuddle",
+      "/the-skimm",
+      "/tinybop",
+      "/trumaker"
+    ],
+    "Will Porteous": [
+      "/buzzfeed-1",
+      "/drobo",
+      "/paperless-post",
+      "/spaceflight",
+      "/spire"
+    ]
+  },
+  "companies": {
+    "21 inc.": [
+      "/page-21"
+    ],
+    "Abra": [
+      "/abra-1"
+    ],
+    "Avant": [
+      "/avant"
+    ],
+    "Bark & Co.": [
+      "/bark-co"
+    ],
+    "Base": [
+      "/base"
+    ],
+    "Betaworks": [
+      "/betaworks"
+    ],
+    "Bitly": [
+      "/bitly"
+    ],
+    "BitPay": [
+      "/bitpay"
+    ],
+    "Boom": [
+      "/boom"
+    ],
+    "Breather": [
+      "/breather"
+    ],
+    "Business Insider": [
+      "/business-insider"
+    ],
+    "BuzzFeed": [
+      "/buzzfeed-1"
+    ],
+    "Clearpath": [
+      "/clearpath"
+    ],
+    "Collective Health": [
+      "/collective-health"
+    ],
+    "CoverHound": [
+      "/coverhound"
+    ],
+    "Datadog": [
+      "/datadog"
+    ],
+    "Drobo": [
+      "/drobo"
+    ],
+    "Yipit": [
+      "/yipit"
+    ],
+    "Floored": [
+      "/floored"
+    ],
+    "Hightower": [
+      "/hightower-1"
+    ],
+    "Hyla": [
+      "/hyla"
+    ],
+    "Imgix": [
+      "/imgix"
+    ],
+    "itBit": [
+      "/itbit"
+    ],
+    "Jibo": [
+      "/jibo"
+    ],
+    "K2 Intelligence": [
+      "/k2-intelligence"
+    ],
+    "Kik": [
+      "/kik"
+    ],
+    "Kroll Bond Rating Agency": [
+      "/kroll-bond-ratings"
+    ],
+    "Managed by Q": [
+      "/managed-by-q"
+    ],
+    "Mirror": [
+      "/mirror"
+    ],
+    "Noom": [
+      "/noom"
+    ],
+    "olo": [
+      "/olo"
+    ],
+    "OnDeck": [
+      "/ondeck-1"
+    ],
+    "One Drop": [
+      "/one-drop"
+    ],
+    "Palantir": [
+      "/palantir"
+    ],
+    "Paperless": [
+      "/paperless-post"
+    ],
+    "Payfone": [
+      "/payfone"
+    ],
+    "Recyclebank": [
+      "/recyclebank"
+    ],
+    "Ripple": [
+      "/ripple"
+    ],
+    "Roundbox": [
+      "/roundbox"
+    ],
+    "Electric Cloud": [
+      "/electric-cloud"
+    ],
+    "Shuddle": [
+      "/shuddle"
+    ],
+    "Sierra Auto Finance ": [
+      "/driverup"
+    ],
+    "theSkimm": [
+      "/the-skimm"
+    ],
+    "SocialFlow": [
+      "/socialflow"
+    ],
+    "Spaceflight": [
+      "/spaceflight"
+    ],
+    "Spire": [
+      "/spire"
+    ],
+    "Tinybop": [
+      "/tinybop"
+    ],
+    "Trumaker": [
+      "/trumaker"
+    ],
+    "VigLink": [
+      "/viglink"
+    ],
+    "OpenPeak": [
+      "/openpeak"
+    ],
+    "Yieldbot": [
+      "/yieldbot"
+    ],
+    "Sailthru": [
+      "/sailthru"
+    ]
+  }
+};
+
+console.log('portfolio', portfolio);
+$(document).ready(function () {
+  var investorData = [];
+  Object.keys(portfolio.investors).forEach(function (investor) {
+    var escaped = investor.split(' ').join('_');
+    investorData.push({
+      id: 'investors:' + escaped,
+      text: investor
+    });
+  });
+  var categoryData = [];
+  Object.keys(portfolio.categories).forEach(function (category) {
+    var escaped = category.split(' ').join('_');
+
+    categoryData.push({
+      id: 'categories:' + escaped,
+      text: category
+    });
+  });
+  var industryData = [];
+  Object.keys(portfolio.industries).forEach(function (industry) {
+    var escaped = industry.split(' ').join('_');
+    industryData.push({
+      id: 'industries:' + escaped,
+      text: industry
+    });
+  });
+  var locationData = [];
+  Object.keys(portfolio.locations).forEach(function (location) {
+    var escaped = location.split(' ').join('_');
+
+    locationData.push({
+      id: 'locations:' + escaped,
+      text: location
+    });
+  });
+  var companyData = [];
+  Object.keys(portfolio.companies).forEach(function (company) {
+    var escapedCompany = company.split(' ').join('_');
+    companyData.push({
+      id: 'companies:' + escapedCompany,
+      text: company
+    });
+  });
+
+  $('h2:contains("PRIMARY PORTFOLIO")').after('<div id="portfolio-filter-wrapper"><label for="portfolio-filter"><select multiple="multiple" style="width:100%" class="portfolio-filter" id="portfolio-filter"/></label></div>');
+  $("#portfolio-filter").select2({
+    placeholder: "Filter",
+    createSearchChoicePosition: "bottom",
+    tokenSeparators: [","],
+    formatSelectionTooBig: function (limit) {
+      return '';
+    },
+    maximumSelectionSize: 1,
+    data: [{
+      text: "Category",
+      children: categoryData
+    }, {
+      text: "Investor",
+      children: investorData
+    }, {
+      text: "Industry",
+      children: industryData
+    }, {
+      text: "Locations",
+      children: locationData
+    }, {
+      text: "Companies",
+      children: companyData
+    }],
+    allowClear: true,
+    selectOnClose: true
+  });
+  var portfolioFilterSelect = $('#portfolio-filter');
+  var portfolioResults = $('h2:contains("PRIMARY PORTFOLIO")').parent().parent().parent().children().eq(2);
+  var portfolioFilterInital = $(portfolioResults).clone();
+
+  portfolioFilterSelect.on('select2:selecting', function (e) {
+    $(portfolioFilterSelect).select2('data').forEach(function (value, count) {
+      if (count === 0) {
+        $(portfolioFilterSelect).select2().val(null).trigger('change');
+      }
+    });
+  });
+
+  portfolioFilterSelect.on('change', function (e) {
+
+    var selected = $('#portfolio-filter').val() || [];
+    //  console.log('selected', selected);
+    if (!selected.length) {
+      $(portfolioResults).html($(portfolioFilterInital).html());
+      $.each($(portfolioResults).find('a'), function (index, obj) {
+        var img = $(obj).find('img');
+        var dataSrc = $(img).data('src');
+        $(obj).find('img').attr('src', dataSrc).css('opacity', 1);
+      });
+
+      return;
+    }
+    var hrefs = {};
+    selected.forEach(function (id) {
+      var reconstitutedId = id.split('_').join(' ');
+
+      var parts = reconstitutedId.split(':');
+      if (!parts || !parts.length) {
+        return;
+      }
+      var theseHrefs = portfolio[parts[0]][parts[1]] || [];
+      theseHrefs.forEach(function (href) {
+        hrefs[href] = true;
+      });
+    });
+    //    console.log('hrefs', Object.keys(hrefs));
+    $(portfolioResults).html($(portfolioFilterInital).html());
+    $.each($(portfolioResults).find('a'), function (index, obj) {
+      var thisHref = $(obj).attr('href');
+      if (!(hrefs[thisHref])) {
+        //      console.log('removing', thisHref);
+        $(obj).parent().parent().detach();
+      } else {
+        //    console.log('ok', thisHref);
+        var img = $(obj).find('img');
+        var dataSrc = $(img).data('src');
+        $(obj).find('img').attr('src', dataSrc).css('opacity', 1);
+      }
+    });
+  });
+});
