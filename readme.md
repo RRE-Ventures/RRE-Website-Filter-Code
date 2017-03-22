@@ -28,16 +28,18 @@ For instance, if you have the SquareSpace server running locally, this would be:
 
 ```
 % curl http://localhost:9000/protfolio/?format=json-pretty > all.json
+% curl http://localhost:9000/seed-portolio?format=json-pretty > seed-all.json
 ```
 
 Once you have this data, you can filter it with the filter command. (You may need to "npm install" first.)
 
 ```
 % node ./bin/filter > out.json
+% node ./bin/filter-seed > seed-out.json
 ```
 
 ## Galleries
 
 * Primary Portfolio (/protfolio)
-* Seed Portfolio
-* Notable Exits
+* Seed Portfolio (/seed-portfolio?format=json-pretty)
+* Notable Exits (not doing)

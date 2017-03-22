@@ -1,0 +1,118 @@
+// quick and dirty data munger
+
+var _ = require('lodash');
+
+var all = require('../seed-all');
+
+// var counts = countByFacet(all);
+// console.log(counts);
+
+var facets = dataByFacets(all);
+console.log(JSON.stringify(facets, null, 2));
+
+function dataByFacets(data) {
+
+  var tags = {};
+  var categories = {};
+  var locations = {};
+  var industries = {};
+  var investors = {};
+  var companies = {};
+
+  _.each(data.items, function (item) {
+    if (!item.clickthroughUrl) {
+      //      console.log('skipping ', item.title);
+      return;
+    }
+    if (item.title) {
+      companies[item.title] = companies[item.title] || [];
+      companies[item.title].push(item.clickthroughUrl);
+    }
+
+    _.each(item.tags, function (tag) {
+      tags[tag] = tags[tag] || [];
+      tags[tag].push(item.clickthroughUrl);
+      // tag : "industry: logistics" or "location: New York"
+      var parts = tag.split(': ');
+      if (parts[0] === 'location') {
+        locations[parts[1]] = locations[parts[1]] || [];
+        locations[parts[1]].push(item.clickthroughUrl);
+      }
+      if (parts[0] === 'industry') {
+        industries[parts[1]] = industries[parts[1]] || [];
+        industries[parts[1]].push(item.clickthroughUrl);
+      }
+      if (parts[0] === 'investor') {
+        investors[parts[1]] = investors[parts[1]] || [];
+        investors[parts[1]].push(item.clickthroughUrl);
+      }
+    });
+    _.each(item.categories, function (category) {
+      if (!item.clickthroughUrl) {
+        console.log('skipping ', item.title);
+        return;
+      }
+      categories[category] = categories[category] || [];
+      categories[category].push(item.clickthroughUrl);
+    });
+  });
+
+  return {
+    tags: tags,
+    categories: categories,
+    locations: locations,
+    industries: industries,
+    investors: investors,
+    companies: companies
+  }; // assume no es6
+}
+
+function countByFacet(data) {
+
+  var tags = {};
+  var categories = {};
+  var locations = {};
+  var industries = {};
+  var investors = {};
+
+  _.each(data.items, function (item) {
+    _.each(item.tags, function (tag) {
+      tags[tag] = tags[tag] || 0;
+      tags[tag]++;
+
+      // tag : "industry: logistics" or "location: New York"
+      var parts = tag.split(': ');
+      if (parts[0] === 'location') {
+        locations[parts[1]] = locations[parts[1]] || 0;
+        locations[parts[1]]++;
+      }
+      if (parts[0] === 'industry') {
+        industries[parts[1]] = industries[parts[1]] || 0;
+        industries[parts[1]]++;
+      }
+      if (parts[0] === 'investor') {
+        investors[parts[1]] = investors[parts[1]] || 0;
+        investors[parts[1]]++;
+      }
+    });
+    _.each(item.categories, function (category) {
+      categories[category] = categories[category] || 0;
+      categories[category]++;
+    });
+  });
+
+  //
+  // console.log('tags', tags);
+  // console.log('categories', categories);
+  // console.log('locations', locations);
+  // console.log('industries', industries);
+  // console.log('investors', investors);
+
+  return {
+    tags: tags,
+    categories: categories,
+    locations: locations,
+    industries: industries,
+    investors: investors
+  }; // assume no es6
+}

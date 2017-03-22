@@ -1,0 +1,597 @@
+{
+  "tags": {
+    "investor: Will Porteous": [
+      "/accion-systems",
+      "/biolite",
+      "/flynn",
+      "/nanit",
+      "/screenmeet"
+    ],
+    "location: Boston": [
+      "/accion-systems",
+      "/greathorn",
+      "/understory"
+    ],
+    "industry: Space": [
+      "/accion-systems"
+    ],
+    "industry: Satellites": [
+      "/accion-systems"
+    ],
+    "investor: Jim Robinson": [
+      "/admittedly",
+      "/amicus",
+      "/bolt",
+      "/culinary-agents",
+      "/mingyian",
+      "/case"
+    ],
+    "industry: Education": [
+      "/admittedly"
+    ],
+    "location: New York": [
+      "/admittedly",
+      "/amicus",
+      "/basno",
+      "/biolite",
+      "/bolt",
+      "/bowery",
+      "/brightwheel",
+      "/clarity-money",
+      "/clubhouse",
+      "/culinary-agents",
+      "/dextro",
+      "/digital-genius",
+      "/peach",
+      "/nanit",
+      "/sols",
+      "/the-square-foot",
+      "/thinkful",
+      "/trusted-insight",
+      "/wayup",
+      "/yhat"
+    ],
+    "industry: Drone OS": [
+      "/airware"
+    ],
+    "investor: Stuart Ellman": [
+      "/airware",
+      "/bloglovin",
+      "/clarity-money",
+      "/the-square-foot",
+      "/thinkful"
+    ],
+    "location: San Francisco": [
+      "/airware",
+      "/flynn",
+      "/screenmeet"
+    ],
+    "industry: Campaigns": [
+      "/amicus"
+    ],
+    "investor: Steve Schlafman": [
+      "/basno",
+      "/beacon-reader",
+      "/the-black-tux",
+      "/boom-aero",
+      "/booster-fuels",
+      "/bowery",
+      "/brightwheel",
+      "/peach",
+      "/understory",
+      "/wag",
+      "/wayup"
+    ],
+    "industry: Digital Badges": [
+      "/basno"
+    ],
+    "location: Oakland": [
+      "/beacon-reader"
+    ],
+    "industry: Off-grid Energy": [
+      "/biolite"
+    ],
+    "location: Los Angeles": [
+      "/the-black-tux",
+      "/gem",
+      "/mingyian",
+      "/wag"
+    ],
+    "industry: Retail": [
+      "/the-black-tux",
+      "/sols"
+    ],
+    "industry: Formal Wear": [
+      "/the-black-tux"
+    ],
+    "location: Stockholm": [
+      "/bloglovin"
+    ],
+    "industry: Blockchain": [
+      "/bolt",
+      "/gem",
+      "/case"
+    ],
+    "industry: Cryptocurrency": [
+      "/bolt",
+      "/gem",
+      "/case"
+    ],
+    "industry: Airplanes": [
+      "/boom-aero"
+    ],
+    "location: Denver": [
+      "/boom-aero"
+    ],
+    "industry: Transportation": [
+      "/booster-fuels"
+    ],
+    "location: Seattle": [
+      "/booster-fuels"
+    ],
+    "industry: Agriculture": [
+      "/bowery"
+    ],
+    "investor: Raju Rishi": [
+      "/argo",
+      "/clubhouse",
+      "/greathorn",
+      "/krypnostic"
+    ],
+    "industry: Sales Force Automation": [
+      "/argo"
+    ],
+    "industry: Workflow": [
+      "/clubhouse"
+    ],
+    "industry: Food & Hospitality": [
+      "/culinary-agents"
+    ],
+    "industry: Computer Vision": [
+      "/dextro"
+    ],
+    "investor: Alice Lloyd George": [
+      "/dextro",
+      "/gem",
+      "/sols",
+      "/wave-vr",
+      "/yhat"
+    ],
+    "investor: James D. Robinson III": [
+      "/digital-genius",
+      "/trusted-insight"
+    ],
+    "industry: Cloud Security": [
+      "/greathorn",
+      "/krypnostic"
+    ],
+    "industry: Social Media": [
+      "/peach"
+    ],
+    "location: Palo Alto": [
+      "/krypnostic"
+    ],
+    "industry: Brand Management": [
+      "/mingyian"
+    ],
+    "industry: Healthcare": [
+      "/nanit"
+    ],
+    "industry: Screen Share": [
+      "/screenmeet"
+    ],
+    "location: Rochester": [
+      "/case"
+    ],
+    "industry: Music": [
+      "/wave-vr"
+    ],
+    "location: Austin": [
+      "/wave-vr"
+    ],
+    "industry: Brokerage": [
+      "/the-square-foot"
+    ],
+    "Industry: Education Technology": [
+      "/thinkful"
+    ],
+    "industry: Human Resources": [
+      "/wayup"
+    ],
+    "industry: Data Science": [
+      "/yhat"
+    ]
+  },
+  "categories": {
+    "Hardware/Products": [
+      "/accion-systems",
+      "/biolite",
+      "/nanit",
+      "/sols"
+    ],
+    "Media": [
+      "/admittedly",
+      "/basno",
+      "/beacon-reader",
+      "/bloglovin",
+      "/peach"
+    ],
+    "Enterprise": [
+      "/airware",
+      "/digital-genius",
+      "/screenmeet",
+      "/understory",
+      "/wayup"
+    ],
+    "SaaS": [
+      "/amicus",
+      "/argo"
+    ],
+    "E-Commerce": [
+      "/the-black-tux"
+    ],
+    "Financial Services": [
+      "/bolt",
+      "/clarity-money",
+      "/gem",
+      "/greathorn",
+      "/case",
+      "/trusted-insight"
+    ],
+    "Transportation": [
+      "/boom-aero"
+    ],
+    "On-demand Service": [
+      "/booster-fuels",
+      "/wag"
+    ],
+    "Consumer": [
+      "/bowery",
+      "/mingyian"
+    ],
+    "Education": [
+      "/brightwheel",
+      "/thinkful"
+    ],
+    "Developer Tools": [
+      "/clubhouse",
+      "/flynn",
+      "/yhat"
+    ],
+    "Market Places": [
+      "/culinary-agents"
+    ],
+    "Machine Learning": [
+      "/dextro"
+    ],
+    "Security": [
+      "/krypnostic"
+    ],
+    "VR/AR": [
+      "/wave-vr"
+    ],
+    "Real Estate": [
+      "/the-square-foot"
+    ]
+  },
+  "locations": {
+    "Boston": [
+      "/accion-systems",
+      "/greathorn",
+      "/understory"
+    ],
+    "New York": [
+      "/admittedly",
+      "/amicus",
+      "/basno",
+      "/biolite",
+      "/bolt",
+      "/bowery",
+      "/brightwheel",
+      "/clarity-money",
+      "/clubhouse",
+      "/culinary-agents",
+      "/dextro",
+      "/digital-genius",
+      "/peach",
+      "/nanit",
+      "/sols",
+      "/the-square-foot",
+      "/thinkful",
+      "/trusted-insight",
+      "/wayup",
+      "/yhat"
+    ],
+    "San Francisco": [
+      "/airware",
+      "/flynn",
+      "/screenmeet"
+    ],
+    "Oakland": [
+      "/beacon-reader"
+    ],
+    "Los Angeles": [
+      "/the-black-tux",
+      "/gem",
+      "/mingyian",
+      "/wag"
+    ],
+    "Stockholm": [
+      "/bloglovin"
+    ],
+    "Denver": [
+      "/boom-aero"
+    ],
+    "Seattle": [
+      "/booster-fuels"
+    ],
+    "Palo Alto": [
+      "/krypnostic"
+    ],
+    "Rochester": [
+      "/case"
+    ],
+    "Austin": [
+      "/wave-vr"
+    ]
+  },
+  "industries": {
+    "Space": [
+      "/accion-systems"
+    ],
+    "Satellites": [
+      "/accion-systems"
+    ],
+    "Education": [
+      "/admittedly"
+    ],
+    "Drone OS": [
+      "/airware"
+    ],
+    "Campaigns": [
+      "/amicus"
+    ],
+    "Digital Badges": [
+      "/basno"
+    ],
+    "Off-grid Energy": [
+      "/biolite"
+    ],
+    "Retail": [
+      "/the-black-tux",
+      "/sols"
+    ],
+    "Formal Wear": [
+      "/the-black-tux"
+    ],
+    "Blockchain": [
+      "/bolt",
+      "/gem",
+      "/case"
+    ],
+    "Cryptocurrency": [
+      "/bolt",
+      "/gem",
+      "/case"
+    ],
+    "Airplanes": [
+      "/boom-aero"
+    ],
+    "Transportation": [
+      "/booster-fuels"
+    ],
+    "Agriculture": [
+      "/bowery"
+    ],
+    "Sales Force Automation": [
+      "/argo"
+    ],
+    "Workflow": [
+      "/clubhouse"
+    ],
+    "Food & Hospitality": [
+      "/culinary-agents"
+    ],
+    "Computer Vision": [
+      "/dextro"
+    ],
+    "Cloud Security": [
+      "/greathorn",
+      "/krypnostic"
+    ],
+    "Social Media": [
+      "/peach"
+    ],
+    "Brand Management": [
+      "/mingyian"
+    ],
+    "Healthcare": [
+      "/nanit"
+    ],
+    "Screen Share": [
+      "/screenmeet"
+    ],
+    "Music": [
+      "/wave-vr"
+    ],
+    "Brokerage": [
+      "/the-square-foot"
+    ],
+    "Human Resources": [
+      "/wayup"
+    ],
+    "Data Science": [
+      "/yhat"
+    ]
+  },
+  "investors": {
+    "Will Porteous": [
+      "/accion-systems",
+      "/biolite",
+      "/flynn",
+      "/nanit",
+      "/screenmeet"
+    ],
+    "Jim Robinson": [
+      "/admittedly",
+      "/amicus",
+      "/bolt",
+      "/culinary-agents",
+      "/mingyian",
+      "/case"
+    ],
+    "Stuart Ellman": [
+      "/airware",
+      "/bloglovin",
+      "/clarity-money",
+      "/the-square-foot",
+      "/thinkful"
+    ],
+    "Steve Schlafman": [
+      "/basno",
+      "/beacon-reader",
+      "/the-black-tux",
+      "/boom-aero",
+      "/booster-fuels",
+      "/bowery",
+      "/brightwheel",
+      "/peach",
+      "/understory",
+      "/wag",
+      "/wayup"
+    ],
+    "Raju Rishi": [
+      "/argo",
+      "/clubhouse",
+      "/greathorn",
+      "/krypnostic"
+    ],
+    "Alice Lloyd George": [
+      "/dextro",
+      "/gem",
+      "/sols",
+      "/wave-vr",
+      "/yhat"
+    ],
+    "James D. Robinson III": [
+      "/digital-genius",
+      "/trusted-insight"
+    ]
+  },
+  "companies": {
+    "Accion Systems Inc.": [
+      "/accion-systems"
+    ],
+    "Admitted.ly": [
+      "/admittedly"
+    ],
+    "Airware": [
+      "/airware"
+    ],
+    "Amicus": [
+      "/amicus"
+    ],
+    "Basno": [
+      "/basno"
+    ],
+    "Charge Hound (fka Beacon Reader)": [
+      "/beacon-reader"
+    ],
+    "Biolite": [
+      "/biolite"
+    ],
+    "TheBlackTux": [
+      "/the-black-tux"
+    ],
+    "Bloglovin": [
+      "/bloglovin"
+    ],
+    "Bolt": [
+      "/bolt"
+    ],
+    "Boom Technology, Inc.": [
+      "/boom-aero"
+    ],
+    "Booster Fuels, Inc.": [
+      "/booster-fuels"
+    ],
+    "Bowery": [
+      "/bowery"
+    ],
+    "Brightwheel": [
+      "/brightwheel"
+    ],
+    "Clarity Money": [
+      "/clarity-money"
+    ],
+    "Cleargraph (fka Argo)": [
+      "/argo"
+    ],
+    "Clubhouse": [
+      "/clubhouse"
+    ],
+    "Culinary Agents": [
+      "/culinary-agents"
+    ],
+    "Dextro": [
+      "/dextro"
+    ],
+    "Digital Genius": [
+      "/digital-genius"
+    ],
+    "Flynn": [
+      "/flynn"
+    ],
+    "Gem (fka BitVault)": [
+      "/gem"
+    ],
+    "Greathorn": [
+      "/greathorn"
+    ],
+    "Interspace (fka Peach/Byte)": [
+      "/peach"
+    ],
+    "Kryptnostic": [
+      "/krypnostic"
+    ],
+    "Mingyian": [
+      "/mingyian"
+    ],
+    "Nanit": [
+      "/nanit"
+    ],
+    "ScreenMeet (fka Projector)": [
+      "/screenmeet"
+    ],
+    "Signet (fka Case/Case Wallet)": [
+      "/case"
+    ],
+    "Sols": [
+      "/sols"
+    ],
+    "The Wave VR": [
+      "/wave-vr"
+    ],
+    "TheSquareFoot": [
+      "/the-square-foot"
+    ],
+    "Thinkful": [
+      "/thinkful"
+    ],
+    "Trusted Insight": [
+      "/trusted-insight"
+    ],
+    "Understory Weather": [
+      "/understory"
+    ],
+    "Wag Labs": [
+      "/wag"
+    ],
+    "Way Up (fka The Campus Job)": [
+      "/wayup"
+    ],
+    "Yhat": [
+      "/yhat"
+    ]
+  }
+}
