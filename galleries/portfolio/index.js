@@ -1393,23 +1393,6 @@ $(document).ready(function () {
         var out = dataByFacets(results);
         if (out) {
           processPortfolio(this._rtype, out);
-
-          select2Options.data = [{
-            text: 'Category',
-            children: categoryData
-          }, {
-            text: 'Investor',
-            children: investorData
-          }, {
-            text: 'Industry',
-            children: industryData
-          }, {
-            text: 'Locations',
-            children: locationData
-          }];
-
-          var portfolioFilterSelect = $('#portfolio-filter');
-          portfolioFilterSelect.select2(select2Options);
         } else {
           console.log('error retrieving facets..skipping');
         }
@@ -1419,13 +1402,39 @@ $(document).ready(function () {
       }
     };
 
-    ajaxOptions.url = '/protfolio/?format=json-pretty';
+    // reset
+    investorData = [];
+    categoryData = [];
+    industryData = [];
+    locationData = [];
+    companyData = [];
+    searchable = {};
+
+    var primaryApi = '/protfolio/?format=json-pretty';
+    var seedApi = '/seed-portolio?format=json-pretty';
+    ajaxOptions.url = primaryApi;
     ajaxOptions._rtype = 'primary';
     $.ajax(ajaxOptions).then(function () {
-      ajaxOptions.url = '/seed-portolio?format=json-pretty';
+      ajaxOptions.url = seedApi;
       ajaxOptions._rtype = 'seed';
 
       $.ajax(ajaxOptions).then(function () {
+        select2Options.data = [{
+          text: 'Category',
+          children: categoryData
+        }, {
+          text: 'Investor',
+          children: investorData
+        }, {
+          text: 'Industry',
+          children: industryData
+        }, {
+          text: 'Locations',
+          children: locationData
+        }];
+
+        var portfolioFilterSelect = $('#portfolio-filter');
+        portfolioFilterSelect.select2(select2Options);
       });
     });
 
@@ -1534,12 +1543,6 @@ $(document).ready(function () {
 
     portfolios[portfolioType] = portfolioData;
 
-    investorData = [];
-    categoryData = [];
-    industryData = [];
-    locationData = [];
-    companyData = [];
-    searchable = {};
 
     Object.keys(portfolios).forEach(function (portfolioType) {
       var portfolio = portfolios[portfolioType] || {};
