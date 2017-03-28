@@ -43,3 +43,9 @@ Once you have this data, you can filter it with the filter command. (You may nee
 * Primary Portfolio (/protfolio)
 * Seed Portfolio (/seed-portfolio?format=json-pretty)
 * Notable Exits (not doing)
+
+## Spelling
+
+NB: The spelling of "portfolio" on the galleries is misspelled in two different ways. Not intentional on the programmer's part, just using the data that exists. It would be good to fix this.
+
+It's especially confusing, as /seed-portfolio exists, just without "items".

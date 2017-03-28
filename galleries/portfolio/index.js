@@ -1,4 +1,5 @@
-var portfolios = {
+// cached portfolios, updated on page load
+var initialPortfolios = {
   "primary": {
     "tags": {
       "investor: Jim Robinson": [
@@ -1340,96 +1341,23 @@ var portfolios = {
     }
   }
 };
+// initialPortfolios.primary = {};
+// initialPortfolios.seed = {};
 
-// console.log('portfolio', portfolio);
 $(document).ready(function () {
+
   var investorData = [];
   var categoryData = [];
   var industryData = [];
   var locationData = [];
   var companyData = [];
   var searchable = {};
+  var portfolios = {};
 
-  Object.keys(portfolios).forEach(function (portfolioType) {
-    var portfolio = portfolios[portfolioType];
-    Object.keys(portfolio.investors).forEach(function (investor) {
-      var escaped = investor.split(' ').join('_');
-      var id = 'investors:' + escaped;
-
-      if (searchable[id]) {
-        return;
-      } else {
-        searchable[id] = true;
-      }
-
-      investorData.push({
-        id: id,
-        text: investor
-      });
-    });
-    Object.keys(portfolio.categories).forEach(function (category) {
-      var escaped = category.split(' ').join('_');
-      var id = 'categories:' + escaped;
-      if (searchable[id]) {
-        return;
-      } else {
-        searchable[id] = true;
-      }
-
-      categoryData.push({
-        id: id,
-        text: category
-      });
-    });
-    Object.keys(portfolio.industries).forEach(function (industry) {
-      var escaped = industry.split(' ').join('_');
-      var id = 'industries:' + escaped;
-      if (searchable[id]) {
-        return;
-      } else {
-        searchable[id] = true;
-      }
-
-      industryData.push({
-        id: id,
-        text: industry
-      });
-    });
-    Object.keys(portfolio.locations).forEach(function (location) {
-      var escaped = location.split(' ').join('_');
-      var id = 'locations:' + escaped;
-
-      if (searchable[id]) {
-        return;
-      } else {
-        searchable[id] = true;
-      }
-
-      locationData.push({
-        id: id,
-        text: location
-      });
-    });
-    Object.keys(portfolio.companies).forEach(function (company) {
-      var escaped = company.split(' ').join('_');
-      var id = 'companies:' + escaped;
-      if (searchable[id]) {
-        return;
-      } else {
-        searchable[id] = true;
-      }
-
-      companyData.push({
-        id: id,
-        text: company
-      });
-    });
-  });
-
-  // add filter box
+  // add select2 filter box
   $('h2:contains("PRIMARY PORTFOLIO")').before('<div id="portfolio-filter-wrapper"><label for="portfolio-filter"><select multiple="multiple" style="width:100%" class="portfolio-filter" id="portfolio-filter"/></label></div>');
 
-  $("#portfolio-filter").select2({
+  var select2Options = {
     placeholder: "Filter",
     createSearchChoicePosition: "bottom",
     tokenSeparators: [","],
@@ -1437,31 +1365,69 @@ $(document).ready(function () {
       return '';
     },
     maximumSelectionSize: 1,
-    data: [{
-      text: "Category",
-      children: categoryData
-    }, {
-      text: "Investor",
-      children: investorData
-    }, {
-      text: "Industry",
-      children: industryData
-    }, {
-      text: "Locations",
-      children: locationData
-    }, {
-      text: "Companies",
-      children: companyData
-    }],
     allowClear: true,
-    selectOnClose: true
-  });
+    selectOnClose: false
+  };
+
+  $("#portfolio-filter").select2(select2Options);
+
+  processPortfolio('primary', initialPortfolios.primary);
+  processPortfolio('seed', initialPortfolios.seed);
+
   var portfolioFilterSelect = $('#portfolio-filter');
+  portfolioFilterSelect.select2(select2Options);
+
   var portfolioResultsPrimary = $('h2:contains("PRIMARY PORTFOLIO")').parent().parent().parent().children().eq(2);
   var portfolioFilterInitalPrimary = $(portfolioResultsPrimary).clone();
 
   var portfolioResultsSeed = $('h2:contains("SEED PORTFOLIO")').parent().parent().parent().children().eq(5);
   var portfolioFilterInitalSeed = $(portfolioResultsSeed).clone();
+
+    // refresh our cache the first time
+    var ajaxOptions = {
+      cache: false,
+      dataType: 'json',
+      ifModified: false,
+      timeout: 15000,
+      success: function (results, statusCode) {
+        var out = dataByFacets(results);
+        if (out) {
+          processPortfolio(this._rtype, out);
+
+          select2Options.data = [{
+            text: 'Category',
+            children: categoryData
+          }, {
+            text: 'Investor',
+            children: investorData
+          }, {
+            text: 'Industry',
+            children: industryData
+          }, {
+            text: 'Locations',
+            children: locationData
+          }];
+
+          var portfolioFilterSelect = $('#portfolio-filter');
+          portfolioFilterSelect.select2(select2Options);
+        } else {
+          console.log('error retrieving facets..skipping');
+        }
+      },
+      error: function (xhr, statusCode) {
+        console.log('er', statusCode);
+      }
+    };
+
+    ajaxOptions.url = '/protfolio/?format=json-pretty';
+    ajaxOptions._rtype = 'primary';
+    $.ajax(ajaxOptions).then(function () {
+      ajaxOptions.url = '/seed-portolio?format=json-pretty';
+      ajaxOptions._rtype = 'seed';
+
+      $.ajax(ajaxOptions).then(function () {
+      });
+    });
 
   portfolioFilterSelect.on('select2:selecting', function (e) {
     $(portfolioFilterSelect).select2('data').forEach(function (value, count) {
@@ -1536,9 +1502,7 @@ $(document).ready(function () {
       $('h2:contains("NOTABLE EXITS")').show();
       $('h2:contains("NOTABLE EXITS")').parent().parent().parent().children().eq(7).show();
     }
-    console.log(found);
 
-    //    console.log('hrefs', Object.keys(hrefs));
     $(portfolioResultsPrimary).html($(portfolioFilterInitalPrimary).html());
     $.each($(portfolioResultsPrimary).find('a'), function (index, obj) {
       var thisHref = $(obj).attr('href');
@@ -1557,14 +1521,161 @@ $(document).ready(function () {
     $.each($(portfolioResultsSeed).find('a'), function (index, obj) {
       var thisHref = $(obj).attr('href');
       if (!(hrefs[thisHref])) {
-        //      console.log('removing', thisHref);
         $(obj).parent().parent().detach();
       } else {
-        //    console.log('ok', thisHref);
         var img = $(obj).find('img');
         var dataSrc = $(img).data('src');
         $(obj).find('img').attr('src', dataSrc).css('opacity', 1);
       }
     });
   });
+
+  function processPortfolio(portfolioType, portfolioData) {
+
+    portfolios[portfolioType] = portfolioData;
+
+    investorData = [];
+    categoryData = [];
+    industryData = [];
+    locationData = [];
+    companyData = [];
+    searchable = {};
+
+    Object.keys(portfolios).forEach(function (portfolioType) {
+      var portfolio = portfolios[portfolioType] || {};
+      if (portfolio && portfolio.investors) {
+
+        Object.keys(portfolio.investors).forEach(function (investor) {
+          var escaped = investor.split(' ').join('_');
+          var id = 'investors:' + escaped;
+
+          if (searchable[id]) {
+            return;
+          } else {
+            searchable[id] = true;
+          }
+
+          investorData.push({
+            id: id,
+            text: investor
+          });
+        });
+      }
+
+      if (portfolio && portfolio.categories) {
+        Object.keys(portfolio.categories).forEach(function (category) {
+          var escaped = category.split(' ').join('_');
+          var id = 'categories:' + escaped;
+          if (searchable[id]) {
+            return;
+          } else {
+            searchable[id] = true;
+          }
+
+          categoryData.push({
+            id: id,
+            text: category
+          });
+        });
+      }
+      if (portfolio && portfolio.industries) {
+
+        Object.keys(portfolio.industries).forEach(function (industry) {
+          var escaped = industry.split(' ').join('_');
+          var id = 'industries:' + escaped;
+          if (searchable[id]) {
+            return;
+          } else {
+            searchable[id] = true;
+          }
+
+          industryData.push({
+            id: id,
+            text: industry
+          });
+        });
+      }
+      if (portfolio && portfolio.locations) {
+
+        Object.keys(portfolio.locations).forEach(function (location) {
+          var escaped = location.split(' ').join('_');
+          var id = 'locations:' + escaped;
+
+          if (searchable[id]) {
+            return;
+          } else {
+            searchable[id] = true;
+          }
+
+          locationData.push({
+            id: id,
+            text: location
+          });
+        });
+
+      }
+    });
+
+  }
+
+  function dataByFacets(data) {
+
+    var tags = {};
+    var categories = {};
+    var locations = {};
+    var industries = {};
+    var investors = {};
+    var companies = {};
+    if (!data || !data.items) {
+      console.log('missing data?', data);
+      return;
+    }
+    data.items.forEach(function (item) {
+      if (!item.clickthroughUrl) {
+        //      console.log('skipping ', item.title);
+        return;
+      }
+      if (item.title) {
+        companies[item.title] = companies[item.title] || [];
+        companies[item.title].push(item.clickthroughUrl);
+      }
+
+      item.tags.forEach(function (tag) {
+        tags[tag] = tags[tag] || [];
+        tags[tag].push(item.clickthroughUrl);
+        // tag : "industry: logistics" or "location: New York"
+        var parts = tag.split(': ');
+        if (parts[0] === 'location') {
+          locations[parts[1]] = locations[parts[1]] || [];
+          locations[parts[1]].push(item.clickthroughUrl);
+        }
+        if (parts[0] === 'industry') {
+          industries[parts[1]] = industries[parts[1]] || [];
+          industries[parts[1]].push(item.clickthroughUrl);
+        }
+        if (parts[0] === 'investor') {
+          investors[parts[1]] = investors[parts[1]] || [];
+          investors[parts[1]].push(item.clickthroughUrl);
+        }
+      });
+      item.categories.forEach(function (category) {
+        if (!item.clickthroughUrl) {
+          console.log('skipping ', item.title);
+          return;
+        }
+        categories[category] = categories[category] || [];
+        categories[category].push(item.clickthroughUrl);
+      });
+    });
+
+    return {
+      tags: tags,
+      categories: categories,
+      locations: locations,
+      industries: industries,
+      investors: investors,
+      companies: companies
+    }; // assume no es6
+  }
+
 });
