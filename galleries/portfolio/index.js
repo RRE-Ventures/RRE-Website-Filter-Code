@@ -1671,7 +1671,7 @@ $(document).ready(function () {
           categories[category] = categories[category] || [];
           categories[category].push(item.clickthroughUrl);
         });
-       });
+       }
     }
 
     return {
