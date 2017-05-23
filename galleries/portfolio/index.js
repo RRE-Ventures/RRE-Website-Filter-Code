@@ -1672,7 +1672,7 @@ $(document).ready(function () {
           categories[category].push(item.clickthroughUrl);
         });
        }
-    }
+    });
 
     return {
       tags: tags,
