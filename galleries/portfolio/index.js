@@ -1410,7 +1410,7 @@ $(document).ready(function () {
     companyData = [];
     searchable = {};
 
-    var primaryApi = '/protfolio/?format=json-pretty';
+    var primaryApi = '/portfolio/?format=json-pretty';
     var seedApi = '/seed-portolio?format=json-pretty';
     ajaxOptions.url = primaryApi;
     ajaxOptions._rtype = 'primary';
@@ -1425,9 +1425,6 @@ $(document).ready(function () {
         }, {
           text: 'Investor',
           children: investorData
-        }, {
-          text: 'Industry',
-          children: industryData
         }, {
           text: 'Locations',
           children: locationData
@@ -1643,33 +1640,39 @@ $(document).ready(function () {
         companies[item.title].push(item.clickthroughUrl);
       }
 
-      item.tags.forEach(function (tag) {
-        tags[tag] = tags[tag] || [];
-        tags[tag].push(item.clickthroughUrl);
-        // tag : "industry: logistics" or "location: New York"
-        var parts = tag.split(': ');
-        if (parts[0] === 'location') {
-          locations[parts[1]] = locations[parts[1]] || [];
-          locations[parts[1]].push(item.clickthroughUrl);
-        }
-        if (parts[0] === 'industry') {
-          industries[parts[1]] = industries[parts[1]] || [];
-          industries[parts[1]].push(item.clickthroughUrl);
-        }
-        if (parts[0] === 'investor') {
-          investors[parts[1]] = investors[parts[1]] || [];
-          investors[parts[1]].push(item.clickthroughUrl);
-        }
-      });
-      item.categories.forEach(function (category) {
-        if (!item.clickthroughUrl) {
-          console.log('skipping ', item.title);
-          return;
-        }
-        categories[category] = categories[category] || [];
-        categories[category].push(item.clickthroughUrl);
-      });
-    });
+    if (item && item.tags) {
+
+        item.tags.forEach(function (tag) {
+          tags[tag] = tags[tag] || [];
+          tags[tag].push(item.clickthroughUrl);
+          // tag : "industry: logistics" or "location: New York"
+          var parts = tag.split(': ');
+          if (parts[0] === 'location') {
+            locations[parts[1]] = locations[parts[1]] || [];
+            locations[parts[1]].push(item.clickthroughUrl);
+          }
+          if (parts[0] === 'industry') {
+            industries[parts[1]] = industries[parts[1]] || [];
+            industries[parts[1]].push(item.clickthroughUrl);
+          }
+          if (parts[0] === 'investor') {
+            investors[parts[1]] = investors[parts[1]] || [];
+            investors[parts[1]].push(item.clickthroughUrl);
+          }
+        });
+    }
+
+    if (item && item.categories) {
+        item.categories.forEach(function (category) {
+          if (!item.clickthroughUrl) {
+            console.log('skipping ', item.title);
+            return;
+          }
+          categories[category] = categories[category] || [];
+          categories[category].push(item.clickthroughUrl);
+        });
+       });
+    }
 
     return {
       tags: tags,
