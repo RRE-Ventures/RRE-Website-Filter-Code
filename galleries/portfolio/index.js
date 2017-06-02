@@ -1560,6 +1560,10 @@ $(document).ready(function () {
             text: investor
           });
         });
+
+        investorData = investorData.sort(function(a, b) {
+          return a.text.localeCompare(b.text);
+        });
       }
 
       if (portfolio && portfolio.categories) {
@@ -1577,6 +1581,11 @@ $(document).ready(function () {
             text: category
           });
         });
+
+        categoryData = categoryData.sort(function(a, b) {
+          return a.text.localeCompare(b.text);
+        });
+
       }
       if (portfolio && portfolio.industries) {
 
@@ -1594,6 +1603,11 @@ $(document).ready(function () {
             text: industry
           });
         });
+
+        industryData = industryData.sort(function(a, b) {
+          return a.text.localeCompare(b.text);
+        });
+
       }
       if (portfolio && portfolio.locations) {
 
@@ -1611,6 +1625,10 @@ $(document).ready(function () {
             id: id,
             text: location
           });
+        });
+
+       locationData = locationData.sort(function(a, b) {
+          return a.text.localeCompare(b.text);
         });
 
       }
