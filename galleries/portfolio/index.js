@@ -1,12 +1,13 @@
 // cached portfolios, updated on page load
 var initialPortfolios = {
-  primary: {
-    tags: {},
-    categories: {},
-    locations: {},
-    industries: {},
-    investors: {},
-    companies: {}
+    primary: {
+      tags: {},
+      categories: {},
+      locations: {},
+      industries: {},
+      investors: {},
+      companies: {}
+    },
     seed: {
       tags: {},
       categories: {},
