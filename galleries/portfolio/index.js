@@ -16,7 +16,6 @@ var initialPortfolios = {
       investors: {},
       companies: {}
     },
-  },
 };
 // initialPortfolios.primary = {};
 // initialPortfolios.seed = {};
