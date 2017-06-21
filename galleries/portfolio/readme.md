@@ -1,3 +1,3 @@
 # primary portfolio
 
-Data at /protfolio
+Data at /portfolio
